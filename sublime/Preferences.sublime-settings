@@ -1,0 +1,22 @@
+{
+	"auto_match_enabled": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Solarized/Solarized (dark).tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"find_selected_text": true,
+	"font_face": "Fira Mono",
+	"font_size": 12.0,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_subsequent_lines": false,
+	"show_full_path": true,
+	"tab_completion": false,
+	"tab_size": 2,
+	"theme": "Soda SolarizedDark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_whitespace_on_save": true,
+	"word_wrap": true
+}
