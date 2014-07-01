@@ -1,8 +1,6 @@
 #!/bin/bash
 # Part 1 of the install script. Mostly installing some packages.
 
-RUBY_VERSION="2.1.1"
-
 echo -e "ᕙ༼ຈل͜ຈ༽ᕗ Running $(uname) install script ᕙ༼ຈل͜ຈ༽ᕗ\n"
 
 echo -e "Symlinking dotfiles from /home to ~/ ...\n"
@@ -30,7 +28,7 @@ if [[ "$(uname)" == "Linux" ]] ; then
   sudo apt-get install -y build-essential cmake g++ make nodejs python python-software-properties software-properties-common vim
 
   echo -e "Installing various other packages\n"
-  sudo apt-get install -y curl terminator tree ubuntu-restricted-extras vlc wget zsh
+  sudo apt-get install -y curl terminator tmux tree ubuntu-restricted-extras vlc wget zsh
 
 elif [[ "$(uname)" == "Darwin" ]] ; then
 

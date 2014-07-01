@@ -1,6 +1,8 @@
 #!/bin/bash
 # Part 2 of the install script. Should have started a new zsh session at this point.
 
+RUBY_VERSION="2.1.1"
+
 echo -e "Running the Ruby part of the install script for $(uname)...\n"
 
 if [[ $(uname) == "Linux" ]]; then
