@@ -32,20 +32,6 @@ if [[ "$(uname)" == "Linux" ]] ; then
   echo -e "Installing various other packages\n"
   sudo apt-get install -y curl terminator tree ubuntu-restricted-extras vlc wget zsh
 
-  if [[ ! -d "~/.rbenv" ]] ; then
-    echo -e "Cloning rbenv\n"
-    git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
-  else
-    echo -e "Not cloning rbenv - directory already exists.\n"
-  fi
-
-  if [[ ! -d "~/.rbenv/plugins/ruby-build" ]] ; then
-    echo -e "Cloning ruby-build\n"
-    git clone git@github.com:sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-  else
-    echo -e "Not cloning ruby-build - directory already exists.\n"
-  fi
-
 elif [[ "$(uname)" == "Darwin" ]] ; then
 
   if ! type brew 2>&1 > /dev/null ; then
@@ -58,7 +44,7 @@ elif [[ "$(uname)" == "Darwin" ]] ; then
   brew upgrade
 
   echo -e "Installing Homebrew packages"
-  brew install cmake node tree rbenv ruby-build wget
+  brew install cmake node tree wget
 
 fi
 
