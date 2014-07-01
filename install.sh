@@ -25,7 +25,7 @@ if [[ "$(uname)" == "Linux" ]] ; then
 
   echo -e "Installing some dev packages\n"
   sudo apt-add-repository -y ppa:chris-lea/node.js
-  sudo apt-get install -y build-essential cmake g++ make nodejs python python-software-properties software-properties-common vim
+  sudo apt-get install -y build-essential cmake g++ libssl-dev make nodejs python python-software-properties software-properties-common vim
 
   echo -e "Installing various other packages\n"
   sudo apt-get install -y curl terminator tmux tree ubuntu-restricted-extras vlc wget zsh
