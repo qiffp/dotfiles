@@ -8,14 +8,14 @@ echo -e "Running the Ruby part of the install script for $(uname)...\n"
 if [[ $(uname) == "Linux" ]]; then
   if [[ ! -d "~/.rbenv" ]] ; then
     echo -e "Cloning rbenv\n"
-    git clone git@github.com:sstephenson/rbenv.git ~/.rbenv
+    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   else
     echo -e "Not cloning rbenv - directory already exists.\n"
   fi
 
   if [[ ! -d "~/.rbenv/plugins/ruby-build" ]] ; then
     echo -e "Cloning ruby-build\n"
-    git clone git@github.com:sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
   else
     echo -e "Not cloning ruby-build - directory already exists.\n"
   fi
