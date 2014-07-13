@@ -12,9 +12,9 @@ Only semi-tested
 - Sublime packages:
   - Real ones:
     - AdvancedNewFile, All Autocomplete, BracketHighlighter, CoffeeScript, CSS3_Syntax, CTags, Git, GitGutter, GotoTab, Markdown Preview, SCSS, SublimeLinter, Tabright, TrailingSpaces
-  - Colour and themes...
-    - Dayle Rees Color Schemes, Predawn, RailsCasts Color Scheme, Solarized, Tomorrow Color Schemes
-    - Theme - Flatland, Theme - Soda, Theme - Soda SolarizedDark, Theme - Spacegray
+  - Colour and theme
+    - Solarized (https://github.com/mybuddymichael/solarized-sublimetext2)
+    - Theme - Soda SolarizedDark
 - Dropbox
 - Flux
 
