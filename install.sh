@@ -25,10 +25,10 @@ if [[ "$(uname)" == "Linux" ]] ; then
 
   echo -e "Installing some dev packages\n"
   sudo apt-add-repository -y ppa:chris-lea/node.js
-  sudo apt-get install -y build-essential cmake g++ libssl-dev make nodejs python python-software-properties software-properties-common vim
+  sudo apt-get install -y build-essential cmake g++ golang libssl-dev make nodejs python python-software-properties software-properties-common vim
 
   echo -e "Installing various other packages\n"
-  sudo apt-get install -y curl terminator tmux tree ubuntu-restricted-extras vlc wget zsh
+  sudo apt-get install -y curl silversearcher-ag terminator tmux tree ubuntu-restricted-extras vlc wget zsh
 
 elif [[ "$(uname)" == "Darwin" ]] ; then
 
@@ -42,9 +42,25 @@ elif [[ "$(uname)" == "Darwin" ]] ; then
   brew upgrade
 
   echo -e "Installing Homebrew packages"
-  brew install cmake node tree wget
+  brew install cmake go node python3 the_silver_searcher tree wget
+  brew install macvim --with-lua # prevent bug where 'brew install vim --with-lua' doesn't install lua properly
+  brew install vim --override-system-vim --with-lua --with-python3
 
 fi
+
+echo "Installing Vundle"
+mkdir -p ~/.vim/bundle/
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+echo "Prevent 'Cannot find color scheme solarized' error before running +PluginInstall"
+mkdir -p ~/.vim/colors/
+curl -o ~/.vim/colors/solarized.vim https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
+
+echo "Installing vim packages with Vundle"
+vim +PluginInstall +qall!
+
+echo "Now remove unnecessary 'vim/colors' directory"
+rm -rf ~/.vim/colors/
 
 if [[ "$(echo $0)" == "zsh" ]] ; then
   echo -e "Sourcing zshrc\n"

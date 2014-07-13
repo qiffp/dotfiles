@@ -8,7 +8,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(brew bundler gem gitfast osx rails ruby tmux tmuxinator vagrant zeus zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export EDITOR='vim'
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
