@@ -24,9 +24,9 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}**"
 
 # paths
 if [[ "$(uname)" == "Linux" ]] ; then
-  alias subl="/opt/Sublime Text 2/sublime_text"
+  alias subl="/opt/Sublime\ Text\ 2/sublime_text"
 elif [[ "$(uname)" == "Darwin" ]] ; then
-  alias subl="/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl"
+  alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 fi
 
 # navigation
