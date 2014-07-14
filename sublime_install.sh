@@ -5,6 +5,7 @@ mkdir /tmp/installscript && cd /tmp/installscript
 wget http://www.carrois.com/wordpress/downloads/fira_3_1/FiraFonts3108.zip
 wget http://www.levien.com/type/myfonts/Inconsolata.otf
 wget http://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceCodePro_FontsOnly-1.017.zip
+wget https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf
 
 unzip FiraFonts3108.zip
 unzip SourceCodePro_FontsOnly-1.017.zip
@@ -16,6 +17,7 @@ if [[ "$(uname)" == "Linux" ]] ; then
   cp -r FiraFonts3108/FiraMono3108/OTF/ /usr/share/fonts/opentype/FiraMono/
   cp Inconsolata.otf /usr/share/fonts/opentype/Inconsolata/
   cp -r SourceCodePro_FontsOnly-1.017/OTF/ /usr/share/fonts/opentype/source-code-pro/
+  cp "Inconsolata for Powerline.otf" "/usr/share/fonts/opentype/Inconsolata for Powerline"
   fc-cache -fv
 
   # Download Sublime
@@ -35,6 +37,7 @@ else if [[ "$(uname)" == "Darwin" ]] ; then
   cp FiraFonts3108/FiraMono*/OTF/* ~/Library/Fonts
   cp Inconsolata.otf ~/Library/Fonts
   cp SourceCodePro_FontsOnly-1.017/OTF/* ~/Library/Fonts
+  cp "Inconsolata for Powerline.otf" ~/Library/Fonts
 
   # Download Sublime
   wget http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2.dmg

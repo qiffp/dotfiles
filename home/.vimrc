@@ -40,6 +40,7 @@ set backspace=indent,eol,start  " extended backspace functionality
 set clipboard=unnamed " share system clipboard
 set cursorline " highlight the current line
 set directory=~/tmp  " swp file directory
+set encoding=utf-8 " utf-8 character encoding
 set history=50  " keep 50 lines of command history
 set ignorecase " used with smartcase - ignore case in searches
 set incsearch   " start searching as you type
@@ -87,6 +88,8 @@ au VimResized * exe "normal! \<c-w>="  " resize splits when the window is resize
 " remap esc to mashing a combination of j and k
 inoremap kj <esc>
 inoremap jk <esc>
+inoremap KJ <esc>
+inoremap JK <esc>
 
 " remap leader to ','
 let mapleader = ","
@@ -118,6 +121,10 @@ highlight clear SignColumn
 " airline
 let g:airline_enable_branch = 1
 let g:airline_theme = 'solarized'
+let g:airline_powerline_fonts = 1
+
+" nerd tree
+let g:nerdtree_tabs_open_on_console_startup = 0
 
 " exit vim if nerd tree is the only tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
