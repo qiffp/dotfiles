@@ -103,9 +103,6 @@ nnoremap <leader>t :tabnew<CR>
 " disable Ex mode
 map Q <nop>
 
-" go to next occurrence of current word
-nnoremap * *<c-o>
-
 " toggle nerd tree
 nnoremap <leader>b :NERDTreeTabsToggle<CR>
 
