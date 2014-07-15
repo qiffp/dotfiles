@@ -97,6 +97,7 @@ let g:mapleader = ","
 
 " tabs
 nnoremap <leader><tab> :tabnext<CR>
+nnoremap <leader><S-tab> :tabprev<CR>
 nnoremap <leader>w :tabclose<CR>
 nnoremap <leader>t :tabnew<CR>
 
