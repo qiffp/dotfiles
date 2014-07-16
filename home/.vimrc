@@ -146,3 +146,6 @@ endif
 
 " closetag enabled for embedded html
 let g:closetag_html_style = 1
+
+" don't conceal quotation marks in json files
+let g:vim_json_syntax_conceal = 0
