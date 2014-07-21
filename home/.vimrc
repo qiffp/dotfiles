@@ -22,6 +22,7 @@ Plugin 'ntpeters/vim-better-whitespace' " highlight extra whitespace
 Plugin 'altercation/vim-colors-solarized' " Solarized colourscheme
 Plugin 'tpope/vim-fugitive' " git functionality in vim...mostly for airline
 Plugin 'airblade/vim-gitgutter' " git status in the sidebar
+Plugin 'a.vim' " switching between source and header files
 
 " Language support
 Plugin 'kchmck/vim-coffee-script'
@@ -106,6 +107,12 @@ map Q <nop>
 
 " toggle nerd tree
 nnoremap <leader>b :NERDTreeTabsToggle<CR>
+
+" switch between source and header files
+nnoremap <leader>s :A<CR>
+
+" find shortcut
+nnoremap <leader>f :Ag 
 
 """ PLUGIN CONFIGURATION """
 
