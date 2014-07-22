@@ -32,6 +32,7 @@ Plugin 'othree/html5.vim'
 Plugin 'nono/jquery.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'jnwhiteh/vim-golang'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
