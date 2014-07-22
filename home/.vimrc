@@ -23,6 +23,7 @@ Plugin 'altercation/vim-colors-solarized' " Solarized colourscheme
 Plugin 'tpope/vim-fugitive' " git functionality in vim...mostly for airline
 Plugin 'airblade/vim-gitgutter' " git status in the sidebar
 Plugin 'a.vim' " switching between source and header files
+Plugin 'mru.vim' " recently opened files
 
 " Language support
 Plugin 'kchmck/vim-coffee-script'
@@ -113,6 +114,9 @@ nnoremap <leader>s :A<CR>
 
 " find shortcut
 nnoremap <leader>f :Ag 
+
+" show recently opened files
+nnoremap <leader>T :MRU<CR>
 
 """ PLUGIN CONFIGURATION """
 
