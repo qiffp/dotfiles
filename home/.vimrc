@@ -80,6 +80,9 @@ set autoindent " always autoindent
 set copyindent " use existing indenting
 set cindent " C indenting
 
+" Tabs for C
+autocmd Filetype h,hpp,c,cpp,cs,m :setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+
 " Make mouse scrolling smoother
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
