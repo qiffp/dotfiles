@@ -16,7 +16,6 @@ Plugin 'FelikZ/ctrlp-py-matcher' " way faster ctrlp searching
 Plugin 'scrooloose/nerdcommenter' " easy commenting
 Plugin 'Shougo/neocomplete.vim' " better autocomplete
 Plugin 'scrooloose/nerdtree' " file browser
-Plugin 'jistr/vim-nerdtree-tabs' " make nerdtree work better with vim tabs
 Plugin 'bling/vim-airline' " neat vim status stuff
 Plugin 'ntpeters/vim-better-whitespace' " highlight extra whitespace
 Plugin 'altercation/vim-colors-solarized' " Solarized colourscheme
@@ -111,7 +110,7 @@ nnoremap <leader>t :tabnew<CR>
 map Q <nop>
 
 " toggle nerd tree
-nnoremap <leader>b :NERDTreeTabsToggle<CR>
+nnoremap <leader>b :NERDTreeToggle<CR>
 
 " switch between source and header files
 nnoremap <leader>s :A<CR>
@@ -135,9 +134,6 @@ highlight clear SignColumn
 let g:airline_enable_branch = 1
 let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
-
-" nerd tree
-let g:nerdtree_tabs_open_on_console_startup = 0
 
 " exit vim if nerd tree is the only tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
