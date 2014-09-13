@@ -25,7 +25,11 @@ if [[ "$(uname)" == "Linux" ]] ; then
 
   echo -e "Installing some dev packages\n"
   sudo apt-add-repository -y ppa:chris-lea/node.js
-  sudo apt-get install -y build-essential cmake g++ golang libssl-dev make nodejs python python-software-properties software-properties-common vim
+  sudo apt-get install -y build-essential cmake g++ golang libssl-dev liblua5.2-dev lua5.2 luajit make nodejs python python-software-properties software-properties-common
+
+  echo -e "Removing old copies of vim and installing vim-gnome\n"
+  sudo apt-get remove -y vim vim-runtime gvim vim-tiny vim-common vim-gui-common
+  sudo apt-get install -y vim-gnome
 
   echo -e "Installing various other packages\n"
   sudo apt-get install -y curl silversearcher-ag terminator tmux tree ubuntu-restricted-extras vlc wget zsh
