@@ -14,7 +14,6 @@ if [[ "$(uname)" == "Linux" ]] ; then
   wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 
   mkdir -p /usr/share/fonts/opentype/Inconsolata /usr/share/fonts/opentype/source-code-pro /usr/share/fonts/opentype/inconsolata-for-powerline /usr/share/fonts/opentype/powerline-symbols
-  mv FiraFonts3108/FiraMono3108/OTF/ /usr/share/fonts/opentype/FiraMono/
   mv Inconsolata.otf /usr/share/fonts/opentype/Inconsolata/
   mv SourceCodePro_FontsOnly-1.017/OTF/ /usr/share/fonts/opentype/source-code-pro/
   mv "Inconsolata for Powerline.otf" /usr/share/fonts/opentype/inconsolata-for-powerline
@@ -23,12 +22,10 @@ if [[ "$(uname)" == "Linux" ]] ; then
 
   mkdir -p ~/.config/fontconfig
   if [[ -f ~/.config/fontconfig/conf.d ]] ; then
-    pushd ~/.config/fontconfig
-    mv conf.d conf.d.old
-    popd
-  else
-    mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d
+    mv ~/.config/fontconfig/conf.d ~/.config/fontconfig/conf.d.old
   fi
+
+  mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d
 
 elif [[ "$(uname)" == "Darwin" ]] ; then
 
