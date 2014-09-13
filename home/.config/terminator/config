@@ -1,8 +1,10 @@
 [global_config]
   title_hide_sizetext = True
   window_state = maximise
+  inactive_color_offset = 0.7
 [keybindings]
   next_tab = <Primary>Tab
+  split_horiz = <Primary><Alt>d
   prev_tab = <Primary><Shift>Tab
   switch_to_tab_6 = <Alt>6
   switch_to_tab_7 = <Alt>7
@@ -11,6 +13,7 @@
   switch_to_tab_2 = <Alt>2
   switch_to_tab_3 = <Alt>3
   switch_to_tab_1 = <Alt>1
+  split_vert = <Primary><Shift>d
   switch_to_tab_8 = <Alt>8
   switch_to_tab_9 = <Alt>9
 [profiles]
