@@ -33,6 +33,8 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'wting/rust.vim'
+Plugin 'cespare/vim-toml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
