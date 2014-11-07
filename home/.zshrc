@@ -71,6 +71,9 @@ alias bxcs="bundle exec rails console --sandbox"
 alias bxr="bundle exec rake"
 
 ### other ###
+if [[ "$(uname)" == "Linux" ]] ; then
+  alias open="xdg-open"
+fi
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
