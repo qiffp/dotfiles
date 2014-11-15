@@ -32,7 +32,7 @@ if [[ "$(uname)" == "Linux" ]] ; then
   sudo apt-get install -y vim-gnome
 
   echo -e "Installing various other packages\n"
-  sudo apt-get install -y curl silversearcher-ag terminator tmux tree ubuntu-restricted-extras vlc wget zsh
+  sudo apt-get install -y curl keepassx silversearcher-ag terminator tmux tree ubuntu-restricted-extras vlc wget zsh
 
 elif [[ "$(uname)" == "Darwin" ]] ; then
 
