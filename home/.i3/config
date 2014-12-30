@@ -176,4 +176,5 @@ exec --no-startup-id pactl set-sink-volume 1 '0%'
 exec --no-startup-id cinnamon-settings-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
+exec --no-startup-id redshift-gtk
 
