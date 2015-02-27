@@ -69,7 +69,7 @@ set ttyscroll=3
 
 " Colours
 set background=dark
-colorscheme solarized
+colorscheme spacegray
 
 " Tabs / indenting
 set tabstop=2 " display tabs as 2 spaces

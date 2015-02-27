@@ -56,15 +56,18 @@ echo "Installing Vundle"
 mkdir -p ~/.vim/bundle/
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-echo "Prevent 'Cannot find color scheme solarized' error before running +PluginInstall"
+echo "Download spacegray colour scheme"
 mkdir -p ~/.vim/colors/
+curl -o ~/.vim/colors/spacegray.vim https://raw.githubusercontent.com/ajh17/Spacegray.vim/master/colors/spacegray.vim
+
+echo "Prevent 'Cannot find color scheme solarized' error before running +PluginInstall"
 curl -o ~/.vim/colors/solarized.vim https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 
 echo "Installing vim packages with Vundle"
 vim +PluginInstall +qall!
 
-echo "Now remove unnecessary 'vim/colors' directory"
-rm -rf ~/.vim/colors/
+echo "Now remove unnecessary ~/.vim/colors/solarized.vim file
+rm -f ~/.vim/colors/solarized.vim
 
 if [[ "$(echo $0)" == "zsh" ]] ; then
   echo -e "Sourcing zshrc\n"
