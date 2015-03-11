@@ -66,7 +66,7 @@ curl -o ~/.vim/colors/solarized.vim https://raw.githubusercontent.com/altercatio
 echo "Installing vim packages with Vundle"
 vim +PluginInstall +qall!
 
-echo "Now remove unnecessary ~/.vim/colors/solarized.vim file
+echo "Now remove unnecessary ~/.vim/colors/solarized.vim file"
 rm -f ~/.vim/colors/solarized.vim
 
 if [[ "$(echo $0)" == "zsh" ]] ; then
