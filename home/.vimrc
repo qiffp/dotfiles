@@ -30,7 +30,7 @@ Plugin 'elzr/vim-json'
 Plugin 'othree/html5.vim'
 Plugin 'nono/jquery.vim'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'wting/rust.vim'
@@ -69,7 +69,7 @@ set ttyscroll=3
 
 " Colours
 set background=dark
-colorscheme spacegray
+colorscheme solarized
 
 " Tabs / indenting
 set tabstop=2 " display tabs as 2 spaces

@@ -8,15 +8,20 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(brew bundler gem gitfast osx rails ruby tmux tmuxinator vagrant zeus zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export EDITOR='vim'
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export TERM=xterm-256color
+export GOPATH=~/Code/go
+
+if [[ -d $GOPATH ]]; then
+  export PATH=$PATH:$GOPATH/bin
+fi
 
 # prompt
-PROMPT='%n %{$fg_bold[red]%}:: %{$fg[green]%}%1~ $(git_prompt_info)%{$reset_color%}» '
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}:: %{$fg[yellow]%}"
+PROMPT='%n %{$fg_bold[red]%}:: %{$fg_no_bold[green]%}%1~ $(git_prompt_info)%{$reset_color%}» '
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}:: %{$fg_no_bold[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX=" "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}**"
 
