@@ -32,7 +32,6 @@ syntax on
 set backspace=indent,eol,start  " extended backspace functionality
 set clipboard=unnamed " share system clipboard
 set completeopt-=preview " disable scratch
-set cursorline " highlight the current line
 set directory=~/tmp  " swp file directory
 set encoding=utf-8 " utf-8 character encoding
 set history=50  " keep 50 lines of command history
