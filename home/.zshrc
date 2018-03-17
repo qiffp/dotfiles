@@ -13,11 +13,16 @@ export EDITOR='vim'
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export TERM=xterm-256color
-export GOPATH=~/Code/go
 
+# go
+export GOPATH=~/Code/go
 if [[ -d $GOPATH ]]; then
   export PATH=$PATH:$GOPATH/bin
 fi
+
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # prompt
 PROMPT='%n %{$fg_bold[red]%}:: %{$fg_no_bold[green]%}%1~ $(git_prompt_info)%{$reset_color%}» '

@@ -9,10 +9,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
-Plugin 'rking/ag.vim' " multi-file search
+Plugin 'mileszs/ack.vim' " grep for vim
+Plugin 'junegunn/fzf.vim' " fuzzy file search
 Plugin 'docunext/closetag.vim' " html tag closing
-Plugin 'kien/ctrlp.vim' " fuzzy search to open files
-Plugin 'FelikZ/ctrlp-py-matcher' " way faster ctrlp searching
 Plugin 'scrooloose/nerdcommenter' " easy commenting
 Plugin 'Shougo/neocomplete.vim' " better autocomplete
 Plugin 'scrooloose/nerdtree' " file browser
@@ -23,18 +22,7 @@ Plugin 'tpope/vim-fugitive' " git functionality in vim...mostly for airline
 Plugin 'airblade/vim-gitgutter' " git status in the sidebar
 Plugin 'a.vim' " switching between source and header files
 Plugin 'mru.vim' " recently opened files
-
-" Language support
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'elzr/vim-json'
-Plugin 'othree/html5.vim'
-Plugin 'nono/jquery.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'fatih/vim-go'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'wting/rust.vim'
-Plugin 'cespare/vim-toml'
+Plugin 'sheerun/vim-polyglot' " majority language support
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,6 +31,7 @@ filetype plugin indent on    " required
 syntax on
 set backspace=indent,eol,start  " extended backspace functionality
 set clipboard=unnamed " share system clipboard
+set completeopt-=preview " disable scratch
 set cursorline " highlight the current line
 set directory=~/tmp  " swp file directory
 set encoding=utf-8 " utf-8 character encoding
@@ -118,8 +107,11 @@ nnoremap <leader>b :NERDTreeToggle<CR>
 " switch between source and header files
 nnoremap <leader>s :A<CR>
 
-" find shortcut
-nnoremap <leader>f :Ag 
+" grep
+nnoremap <leader>f :Ack<Space>
+
+" file fuzzy search
+nnoremap <C-P> :Files<CR>
 
 " show recently opened files
 nnoremap <leader>T :MRU<CR>
@@ -134,9 +126,19 @@ let g:gitgutter_updatetime = 1000
 highlight clear SignColumn
 
 " airline
-let g:airline_enable_branch = 1
+let g:airline#extensions#branch#enabled = 1
 let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
+
+" ag
+let g:ag_highlight = 1
+
+" fzf
+set rtp+=/usr/local/opt/fzf
+let g:fzf_layout = { 'down': '~40%' }
+
+" nerdtree
+let NERDTreeShowHidden=1
 
 " exit vim if nerd tree is the only tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -145,17 +147,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
-" pymatcher for ctrlp
-if !has('python')
-  echo 'In order to use pymatcher plugin, you need +python compiled vim'
-else
-  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-endif
-
 " If ag is available use it as filename list generator instead of 'find'
 if executable("ag")
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --ignore ''*.o'' --hidden -g ""'
+  set grepprg=ag\ --vimgrep\ smart-case
+  let g:ackprg = 'ag --vimgrep --smart-case'
 endif
 
 " closetag enabled for embedded html
@@ -163,3 +158,7 @@ let g:closetag_html_style = 1
 
 " don't conceal quotation marks in json files
 let g:vim_json_syntax_conceal = 0
+
+" highlight .js files as .jsx
+let g:jsx_ext_required = 0
+
