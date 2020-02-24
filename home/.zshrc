@@ -5,7 +5,7 @@ CASE_SENSITIVE="false" # Case-sensitive completion
 COMPLETION_WAITING_DOTS="true"
 
 # Core plugins - ~/.oh-my-zsh/plugins/*  ||  Custom plugins - ~/.oh-my-zsh/custom/plugins/
-plugins=(brew bundler gem gitfast osx rails ruby tmux tmuxinator vagrant zeus zsh-syntax-highlighting)
+plugins=(bundler gem gitfast)
 
 source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -21,8 +21,15 @@ if [[ -d $GOPATH ]]; then
 fi
 
 # nvm
+# NOTE: if want to use nvm, run commented command
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+#source $(brew --prefix nvm)/nvm.sh
+
+# android
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# fzf
+export FZF_DEFAULT_COMMAND='ag --ignore .git --ignore node_modules --ignore "*.o" --hidden -g ""'
 
 # prompt
 PROMPT='%n %{$fg_bold[red]%}:: %{$fg_no_bold[green]%}%1~ $(git_prompt_info)%{$reset_color%}» '
@@ -55,6 +62,7 @@ alias gu="git pull"
 alias gsu="git submodule update --recursive --init"
 alias gsi="git submodule init"
 alias gus="git pull && git submodule update --recursive --init"
+alias ga="git add"
 alias gaa="git add -A"
 alias gci="git commit"
 alias gcia="git commit -a"
@@ -79,14 +87,14 @@ alias bxc="bundle exec rails console"
 alias bxcs="bundle exec rails console --sandbox"
 alias bxr="bundle exec rake"
 
+# poverty
+alias ksdiff="open"
+
 ### other ###
 if [[ "$(uname)" == "Linux" ]] ; then
   alias open="xdg-open"
 fi
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+alias vim="nvim"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
