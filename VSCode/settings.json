@@ -1,0 +1,26 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.colorTheme": "Solarized Light",
+    "vim.vimrc.enable": true,
+    "editor.minimap.enabled": false,
+    "ruby.intellisense": "rubyLocate",
+    "workbench.editor.enablePreview": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.defaultDateStyle": "absolute",
+    "ruby.useLanguageServer": true,
+    "vim.useSystemClipboard": true,
+    "editor.emptySelectionClipboard": false,
+    "[ruby]": {
+        "editor.rulers": [
+            120
+        ],
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": true,
+    },
+    "exploer.confirmDelete": false,
+    "files.trimTrailingWhitespace": true,
+    "window.zoomLevel": 0
+}
