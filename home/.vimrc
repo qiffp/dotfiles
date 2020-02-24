@@ -13,10 +13,9 @@ Plugin 'mileszs/ack.vim' " grep for vim
 Plugin 'junegunn/fzf.vim' " fuzzy file search
 Plugin 'docunext/closetag.vim' " html tag closing
 Plugin 'scrooloose/nerdcommenter' " easy commenting
-Plugin 'Shougo/neocomplete.vim' " better autocomplete
 Plugin 'scrooloose/nerdtree' " file browser
 Plugin 'bling/vim-airline' " neat vim status stuff
-Plugin 'ntpeters/vim-better-whitespace' " highlight extra whitespace
+Plugin 'bronson/vim-trailing-whitespace' " highlight extra whitespace
 Plugin 'altercation/vim-colors-solarized' " Solarized colourscheme
 Plugin 'tpope/vim-fugitive' " git functionality in vim...mostly for airline
 Plugin 'airblade/vim-gitgutter' " git status in the sidebar
@@ -48,15 +47,15 @@ set showcmd     " display incomplete commands
 set showmatch " show matching parenthesis
 set smartcase " used with ignorecase - if search has a capital letter, do case-sensitive search, else case-insensitive
 set title " set the terminal title
+set nohlsearch " disable highlighting for search
 
 " Make vim fast
 set lazyredraw
 set synmaxcol=300
 set ttyfast
-set ttyscroll=3
 
 " Colours
-set background=dark
+" set background=dark
 colorscheme solarized
 
 " Tabs / indenting
@@ -102,6 +101,8 @@ map Q <nop>
 
 " toggle nerd tree
 nnoremap <leader>b :NERDTreeToggle<CR>
+" show the current file in nerd tree
+nnoremap <leader>B :NERDTreeFind<CR>
 
 " switch between source and header files
 nnoremap <leader>s :A<CR>
@@ -141,10 +142,6 @@ let NERDTreeShowHidden=1
 
 " exit vim if nerd tree is the only tab
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
 
 " If ag is available use it as filename list generator instead of 'find'
 if executable("ag")
