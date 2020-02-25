@@ -15,7 +15,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export TERM=xterm-256color
 
 # go
-export GOPATH=~/Code/go
+export GOPATH=$HOME
 if [[ -d $GOPATH ]]; then
   export PATH=$PATH:$GOPATH/bin
 fi
