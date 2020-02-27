@@ -15,6 +15,7 @@ Plugin 'docunext/closetag.vim' " html tag closing
 Plugin 'scrooloose/nerdcommenter' " easy commenting
 Plugin 'scrooloose/nerdtree' " file browser
 Plugin 'bling/vim-airline' " neat vim status stuff
+Plugin 'vim-airline/vim-airline-themes' " airline themes (for g:airline_theme)
 Plugin 'bronson/vim-trailing-whitespace' " highlight extra whitespace
 Plugin 'altercation/vim-colors-solarized' " Solarized colourscheme
 Plugin 'tpope/vim-fugitive' " git functionality in vim...mostly for airline
